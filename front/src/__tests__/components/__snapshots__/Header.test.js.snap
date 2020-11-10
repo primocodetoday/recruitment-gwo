@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BasketHeader/> render properly 1`] = `
+<header>
+  <h4
+    class="mb-4 text-uppercase"
+  >
+    Testing
+  </h4>
+</header>
+`;
+
+exports[`<Header/> render properly 1`] = `
+<header>
+  <h4
+    class="mb-4 text-uppercase"
+  >
+    Testing
+  </h4>
+</header>
+`;

@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BasketItem/> renders properly with passed data 1`] = `
+<li
+  class="mb-3 px-3 rounded border list-group-item list-group-item-secondary"
+>
+  <div
+    class=" align-items-center row"
+  >
+    <div
+      class="col-md-8 col-sm-6 col-5"
+    >
+      <p
+        class="h6 text-left"
+      >
+        Nasza Szkapa
+      </p>
+    </div>
+    <div
+      class="col-md-1 col-sm-2 col-2"
+    >
+      <p
+        class="h6 text-center"
+      >
+        1
+      </p>
+    </div>
+    <div
+      class="col-md-2 col-sm-2 col-3"
+    >
+      <p
+        class="h6 text-center"
+      >
+        20,00
+         zł
+      </p>
+    </div>
+    <div
+      class=" d-flex justify-content-center col-md-1 col-sm-2 col-2"
+    >
+      <button
+        class="text-center btn btn-danger btn-sm"
+        type="button"
+      >
+        <i
+          class="fas fa-times "
+        />
+      </button>
+    </div>
+  </div>
+</li>
+`;

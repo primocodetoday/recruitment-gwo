@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BasketItem/> renders properly with passed data 1`] = `
+<div
+  class=" p-2 mx-auto d-flex align-items-stretch h-100 card"
+>
+  <div
+    class="px-2  row row-cols-sm-2 row-cols-1"
+  >
+    <div
+      class="col-sm-5"
+    >
+      <div
+        class="media"
+      >
+        <img
+          alt="Nasza Szkapa"
+          class="img-fluid rounded border mx-auto mb-3"
+          src="assets/img/fake.png"
+        />
+      </div>
+    </div>
+    <div
+      class="d-flex flex-column justify-content-between col-sm-7"
+    >
+      <div>
+        <p
+          class="h6 mx-auto mb-2 text-uppercase"
+        >
+          Nasza Szkapa
+        </p>
+      </div>
+      <p>
+        Autorzy: 
+        <strong>
+          Maria Konopnicka
+        </strong>
+      </p>
+      <p>
+        Liczba stron: 
+        <strong>
+          30
+        </strong>
+      </p>
+    </div>
+  </div>
+  <button
+    class="ml-auto mt-auto mb-2 mr-2 text-uppercase font-weight-bolder btn btn-outline-warning"
+    type="button"
+  >
+    Do koszyka
+  </button>
+</div>
+`;
+
+exports[`<BookCard/> renders properly with passed data 1`] = `
+<div
+  class=" p-2 mx-auto d-flex align-items-stretch h-100 card"
+>
+  <div
+    class="px-2  row row-cols-sm-2 row-cols-1"
+  >
+    <div
+      class="col-sm-5"
+    >
+      <div
+        class="media"
+      >
+        <img
+          alt="Nasza Szkapa"
+          class="img-fluid rounded border mx-auto mb-3"
+          src="assets/img/fake.png"
+        />
+      </div>
+    </div>
+    <div
+      class="d-flex flex-column justify-content-between col-sm-7"
+    >
+      <div>
+        <p
+          class="h6 mx-auto mb-2 text-uppercase"
+        >
+          Nasza Szkapa
+        </p>
+      </div>
+      <p>
+        Autorzy: 
+        <strong>
+          Maria Konopnicka
+        </strong>
+      </p>
+      <p>
+        Liczba stron: 
+        <strong>
+          30
+        </strong>
+      </p>
+    </div>
+  </div>
+  <button
+    class="ml-auto mt-auto mb-2 mr-2 text-uppercase font-weight-bolder btn btn-outline-warning"
+    type="button"
+  >
+    Do koszyka
+  </button>
+</div>
+`;

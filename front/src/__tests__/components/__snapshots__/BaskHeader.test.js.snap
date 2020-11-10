@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BasketHeader/> render properly 1`] = `
+<div
+  class="mb-2 px-3 text-muted text-uppercase text-center align-items-center row"
+>
+  <div
+    class="border-right text-left pl-2 col-md-8 col-sm-6 col-5"
+  >
+    <p
+      class="h6"
+    >
+      tytuł
+    </p>
+  </div>
+  <div
+    class="border-right px-0 col-md-1 col-sm-2 col-2"
+  >
+    <p
+      class="h6"
+    >
+      szt.
+    </p>
+  </div>
+  <div
+    class="border-right px-0 col-md-2 col-sm-2 col-3"
+  >
+    <p
+      class="h6"
+    >
+      cena
+    </p>
+  </div>
+  <div
+    class="text-center col-md-1 col-sm-2 col-2"
+  >
+    <i
+      class="fas fa-trash"
+    />
+  </div>
+</div>
+`;
