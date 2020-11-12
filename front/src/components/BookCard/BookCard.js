@@ -1,14 +1,11 @@
 ﻿import React from 'react';
-import { Button, Row, Col, Media, Card } from 'react-bootstrap';
-// import { OrderContext } from 'context/OrderContext';
-// import { actionType } from 'reducers';
-import { SnackBar } from 'components/SnackBar/SnackBar';
 import PropTypes from 'prop-types';
+import { Button, Row, Col, Media, Card } from 'react-bootstrap';
+import { SnackBar } from 'components/SnackBar/SnackBar';
 import { addBook } from 'redux/actions/actions';
 import { useDispatch } from 'react-redux';
 
 export const BookCard = ({ book }) => {
-  // const { dispatch } = React.useContext(OrderContext);
   const [isAdded, setIsAdded] = React.useState(false);
   const dispatch = useDispatch();
 

@@ -2,16 +2,19 @@
 import PropTypes from 'prop-types';
 import { Form, Button, Col } from 'react-bootstrap';
 import { Formik } from 'formik';
-import { OrderContext } from 'context/OrderContext';
 import { bookstoreAPI } from 'services/bookstoreAPI';
 import { SnackBar, Input } from 'components';
 import { Link } from 'react-router-dom';
-import { actionType } from 'reducers';
 import { orderSchema } from 'models/orderSchema';
 import { routes } from 'routes';
+import { useDispatch, useSelector } from 'react-redux';
+import { resetOrder } from 'redux/actions/actions';
 
 export const OrderForm = ({ setOrderPlaced }) => {
-  const { state, dispatch } = React.useContext(OrderContext);
+  // Redux
+  const orderForm = useSelector((state) => state);
+  const dispatch = useDispatch();
+  // SnackBars
   const [backEndPass, setBackPass] = React.useState(false);
   const [backEndRefuse, setBackEndRefuse] = React.useState(false);
 
@@ -19,11 +22,11 @@ export const OrderForm = ({ setOrderPlaced }) => {
     e.preventDefault();
     async function orderBooks() {
       await bookstoreAPI
-        .post('order', state)
+        .post('order', orderForm)
         .then((response) => {
           setOrderPlaced(true);
           setBackPass(true);
-          dispatch({ type: actionType.resetOrder });
+          dispatch(resetOrder());
           // eslint-disable-next-line no-console
           console.log('Order send', response.status);
         })
@@ -38,7 +41,7 @@ export const OrderForm = ({ setOrderPlaced }) => {
 
   return (
     <Col as="section">
-      {state.order.length ? (
+      {orderForm.order.length ? (
         <Formik
           validationSchema={orderSchema}
           initialValues={{

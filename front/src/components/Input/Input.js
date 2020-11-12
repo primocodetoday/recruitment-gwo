@@ -1,8 +1,8 @@
 ﻿import React from 'react';
+import PropTypes from 'prop-types';
 import { Form } from 'react-bootstrap';
 import { actionType } from 'reducers';
 import { OrderContext } from 'context/OrderContext';
-import PropTypes from 'prop-types';
 
 export const Input = ({ label, name, type, value, onBlur, handleChange, error, touched }) => {
   const { dispatch } = React.useContext(OrderContext);

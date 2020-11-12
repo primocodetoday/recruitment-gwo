@@ -1,13 +1,10 @@
 ﻿import React from 'react';
 import { Navbar, Nav, Badge } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-// import { OrderContext } from 'context/OrderContext';
 import { routes } from 'routes';
 import { useSelector } from 'react-redux';
 
 export const TopNav = () => {
-  // const { state } = React.useContext(OrderContext);
-
   const order = useSelector((state) => state.order);
 
   return (

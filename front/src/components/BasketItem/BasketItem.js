@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { Row, Col, Button, ListGroup } from 'react-bootstrap';
 import { basketArrayGrid as grid } from 'constants/basketArrayGrid';
 import { priceWithComma } from 'helpers/priceWithComma';
-import { OrderContext } from 'context/OrderContext';
-import { actionType } from 'reducers';
+import { useDispatch } from 'react-redux';
+import { removeBook } from 'redux/actions/actions';
 
 export const BasketItem = ({ title, quantity, price, id }) => {
-  const { dispatch } = React.useContext(OrderContext);
+  const dispatch = useDispatch();
 
   return (
     <ListGroup.Item variant="secondary" as="li" className="mb-3 px-3 rounded border">
@@ -22,12 +22,7 @@ export const BasketItem = ({ title, quantity, price, id }) => {
           <p className="h6 text-center">{priceWithComma(price)} zł</p>
         </Col>
         <Col xs={grid.col4.xs} sm={grid.col4.sm} md={grid.col4.md} className=" d-flex justify-content-center">
-          <Button
-            className="text-center"
-            variant="danger"
-            size="sm"
-            onClick={() => dispatch({ type: actionType.removeBook, payload: { id } })}
-          >
+          <Button className="text-center" variant="danger" size="sm" onClick={() => dispatch(removeBook(id))}>
             <i className="fas fa-times " />
           </Button>
         </Col>

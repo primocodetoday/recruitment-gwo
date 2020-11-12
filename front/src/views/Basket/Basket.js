@@ -1,22 +1,22 @@
 ﻿import React from 'react';
 import { Col, ListGroup, Button } from 'react-bootstrap';
-import { OrderContext } from 'context/OrderContext';
 import { bookstoreAPI } from 'services/bookstoreAPI';
 import { Header, BasketHeader, BasketItem } from 'components';
 import { Link } from 'react-router-dom';
-import './styles/basketStyles.css';
 import { priceWithComma } from 'helpers/priceWithComma';
 import { summaryBalance } from 'helpers/summaryBalance';
 import { routes } from 'routes';
 
+import { useSelector } from 'react-redux';
+
 const Basket = () => {
-  const { state } = React.useContext(OrderContext);
+  const order = useSelector((state) => state.order);
+
   const [basket, setBasket] = React.useState([]);
 
   // Huge state and book combiner
   React.useEffect(() => {
     const result = [];
-    const items = state.order;
 
     const shot = (element) => {
       return new Promise((resolve) =>
@@ -33,7 +33,7 @@ const Basket = () => {
         ),
       );
     };
-    const arrayFill = Promise.all(items.map(shot)).then((data) => {
+    const arrayFill = Promise.all(order.map(shot)).then((data) => {
       result.push(data);
       return Promise.all(data.map(shot));
     });
@@ -43,7 +43,7 @@ const Basket = () => {
       })
       // eslint-disable-next-line no-console
       .catch((err) => console.error(err));
-  }, [state]);
+  }, [order]);
 
   const basketList = basket.length
     ? basket.map(({ title, quantity, price, id }) => {
