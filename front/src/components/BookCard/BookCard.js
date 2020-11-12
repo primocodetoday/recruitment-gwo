@@ -2,7 +2,7 @@
 import PropTypes from 'prop-types';
 import { Button, Row, Col, Media, Card } from 'react-bootstrap';
 import { SnackBar } from 'components/SnackBar/SnackBar';
-import { addBook } from 'redux/actions/actions';
+import { addBook } from 'redux/actions';
 import { useDispatch } from 'react-redux';
 
 export const BookCard = ({ book }) => {

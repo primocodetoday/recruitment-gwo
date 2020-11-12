@@ -1,11 +1,11 @@
 ﻿import React from 'react';
 import PropTypes from 'prop-types';
 import { Form } from 'react-bootstrap';
-import { actionType } from 'reducers';
-import { OrderContext } from 'context/OrderContext';
+import { useDispatch } from 'react-redux';
+import { receiverChange } from 'redux/actions';
 
 export const Input = ({ label, name, type, value, onBlur, handleChange, error, touched }) => {
-  const { dispatch } = React.useContext(OrderContext);
+  const dispatch = useDispatch();
 
   return (
     <Form.Group>
@@ -17,10 +17,7 @@ export const Input = ({ label, name, type, value, onBlur, handleChange, error, t
         onBlur={onBlur}
         onChange={({ currentTarget }) => {
           handleChange({ currentTarget });
-          dispatch({
-            type: actionType.receiverChange,
-            payload: { [currentTarget.name]: currentTarget.value },
-          });
+          dispatch(receiverChange(currentTarget.name, currentTarget.value));
         }}
         isInvalid={!!error && touched}
         isValid={!error && touched}

@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import { orderSchema } from 'models/orderSchema';
 import { routes } from 'routes';
 import { useDispatch, useSelector } from 'react-redux';
-import { resetOrder } from 'redux/actions/actions';
+import { resetOrder } from 'redux/actions';
 
 export const OrderForm = ({ setOrderPlaced }) => {
   // Redux

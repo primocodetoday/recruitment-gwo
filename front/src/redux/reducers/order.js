@@ -25,7 +25,6 @@ export default (state = initialState, action) => {
         order: [...state.order.filter((item) => item.id !== action.payload.id)],
       };
     case ADD_BOOK:
-      console.log(action);
       const { id } = action.payload;
       if (state.order.find((item) => item.id === id)) {
         console.log('Book in order, adding quantity');

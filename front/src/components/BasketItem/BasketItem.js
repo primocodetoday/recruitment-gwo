@@ -4,7 +4,7 @@ import { Row, Col, Button, ListGroup } from 'react-bootstrap';
 import { basketArrayGrid as grid } from 'constants/basketArrayGrid';
 import { priceWithComma } from 'helpers/priceWithComma';
 import { useDispatch } from 'react-redux';
-import { removeBook } from 'redux/actions/actions';
+import { removeBook } from 'redux/actions';
 
 export const BasketItem = ({ title, quantity, price, id }) => {
   const dispatch = useDispatch();

@@ -1,15 +1,14 @@
 ﻿import React from 'react';
 import { Col } from 'react-bootstrap';
 import { Header, OrderForm } from 'components';
-import { OrderContext } from 'context/OrderContext';
 import { Link } from 'react-router-dom';
 import { routes } from 'routes';
+import { useSelector } from 'react-redux';
 
 const Order = () => {
-  const { state } = React.useContext(OrderContext);
   const [wasOrderPlaced, setOrderPlaced] = React.useState(false);
 
-  const { order } = state;
+  const order = useSelector((state) => state.order);
 
   return (
     <Col xs={12} md={10} lg={6} className="px-1 mx-auto">

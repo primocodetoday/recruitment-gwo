@@ -1,4 +1,4 @@
-﻿import { ADD_BOOK, REMOVE_BOOK, RESET_ORDER } from './actionTypes';
+﻿import { ADD_BOOK, REMOVE_BOOK, RESET_ORDER, RECEIVER_CHANGE } from './actionTypes';
 
 export const addBook = (id) => {
   return {
@@ -21,5 +21,11 @@ export const removeBook = (id) => {
 export const resetOrder = () => {
   return {
     type: RESET_ORDER,
+  };
+};
+export const receiverChange = (name, value) => {
+  return {
+    type: RECEIVER_CHANGE,
+    payload: { [name]: value },
   };
 };
