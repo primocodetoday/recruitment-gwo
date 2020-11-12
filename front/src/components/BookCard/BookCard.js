@@ -1,13 +1,16 @@
 ﻿import React from 'react';
 import { Button, Row, Col, Media, Card } from 'react-bootstrap';
-import { OrderContext } from 'context/OrderContext';
+// import { OrderContext } from 'context/OrderContext';
+// import { actionType } from 'reducers';
 import { SnackBar } from 'components/SnackBar/SnackBar';
-import { actionType } from 'reducers';
 import PropTypes from 'prop-types';
+import { addBook } from 'redux/actions/actions';
+import { useDispatch } from 'react-redux';
 
 export const BookCard = ({ book }) => {
-  const { dispatch } = React.useContext(OrderContext);
+  // const { dispatch } = React.useContext(OrderContext);
   const [isAdded, setIsAdded] = React.useState(false);
+  const dispatch = useDispatch();
 
   const { id, title, cover_url: coverUrl, author, pages } = book;
 
@@ -35,7 +38,7 @@ export const BookCard = ({ book }) => {
         className="ml-auto mt-auto mb-2 mr-2 text-uppercase font-weight-bolder"
         variant="outline-warning"
         onClick={() => {
-          dispatch({ type: actionType.addBook, payload: { id, quantity: 1 } });
+          dispatch(addBook(id));
           setIsAdded(true);
         }}
       >
