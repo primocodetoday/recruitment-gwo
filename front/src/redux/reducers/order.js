@@ -25,8 +25,7 @@ export default (state = initialState, action) => {
         order: [...state.order.filter((item) => item.id !== action.payload.id)],
       };
     case ADD_BOOK:
-      const { id } = action.payload;
-      if (state.order.find((item) => item.id === id)) {
+      if (state.order.find((item) => item.id === action.payload.id)) {
         console.log('Book in order, adding quantity');
         return { ...state, order: deepStateAdd(state, action) };
       }
